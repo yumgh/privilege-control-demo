@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.pcd.dao.privilege.PrivilegeGoodsOrderDAO">
+    <resultMap id="BaseResultMap" type="com.example.pcd.entity.privilege.PrivilegeGoodsOrder">
+        <id column="id" jdbcType="INTEGER" property="id"/>
+        <result column="system_id" jdbcType="VARCHAR" property="systemId"/>
+        <result column="scene_id" jdbcType="VARCHAR" property="sceneId"/>
+        <result column="privilege_status" jdbcType="CHAR" property="privilegeStatus"/>
+        <result column="order_id" jdbcType="BOOLEAN" property="orderId"/>
+        <result column="user_id" jdbcType="BOOLEAN" property="userId"/>
+        <result column="goods_count" jdbcType="BOOLEAN" property="goodsCount"/>
+        <result column="total_money" jdbcType="BOOLEAN" property="totalMoney"/>
+        <result column="created_by" jdbcType="BOOLEAN" property="createdBy"/>
+        <result column="created_date" jdbcType="BOOLEAN" property="createdDate"/>
+        <result column="updated_by" jdbcType="BOOLEAN" property="updatedBy"/>
+        <result column="updated_date" jdbcType="BOOLEAN" property="updatedDate"/>
+    </resultMap>
+    <sql id="Base_Column_List">
+            id,
+            system_id,
+            scene_id,
+            privilege_status,
+            order_id,
+            user_id,
+            goods_count,
+            total_money,
+            created_by,
+            created_date,
+            updated_by,
+            updated_date
+    </sql>
+    <select id="selectPrivilege" resultMap="BaseResultMap">
+        select
+        <include refid="Base_Column_List"/>
+        from privilege_goods_order
+        where system_id = #{systemId,jdbcType=VARCHAR}
+        and scene_id = #{sceneId,jdbcType=VARCHAR}
+    </select>
+</mapper>

@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.pcd.dao.GoodsOrderDAO">
+    <resultMap id="BaseResultMap" type="com.example.pcd.entity.GoodsOrder">
+        <id column="id" jdbcType="INTEGER" property="id"/>
+        <result column="order_id" jdbcType="INTEGER" property="orderId"/>
+        <result column="user_id" jdbcType="INTEGER" property="userId"/>
+        <result column="goods_count" jdbcType="INTEGER" property="goodsCount"/>
+        <result column="total_money" jdbcType="DECIMAL" property="totalMoney"/>
+        <result column="created_by" jdbcType="VARCHAR" property="createdBy"/>
+        <result column="created_date" jdbcType="TIMESTAMP" property="createdDate"/>
+        <result column="updated_by" jdbcType="VARCHAR" property="updatedBy"/>
+        <result column="updated_date" jdbcType="TIMESTAMP" property="updatedDate"/>
+    </resultMap>
+    <sql id="Base_Column_List">
+       <trim suffixOverrides=",">
+           <if test="privilege.orderId != null and privilege.orderId  == true">
+                order_id,
+           </if>
+           <if test="privilege.userId != null and privilege.userId  == true">
+                user_id,
+           </if>
+           <if test="privilege.goodsCount != null and privilege.goodsCount  == true">
+                goods_count,
+           </if>
+           <if test="privilege.totalMoney != null and privilege.totalMoney  == true">
+                total_money,
+           </if>
+           <if test="privilege.createdBy != null and privilege.createdBy  == true">
+                created_by,
+           </if>
+           <if test="privilege.createdDate != null and privilege.createdDate  == true">
+                created_date,
+           </if>
+           <if test="privilege.updatedBy != null and privilege.updatedBy  == true">
+                updated_by,
+           </if>
+           <if test="privilege.updatedDate != null and privilege.updatedDate  == true">
+                updated_date,
+           </if>
+       </trim>
+    </sql>
+    <select id="selectByUserId" resultMap="BaseResultMap">
+        select
+        <include refid="Base_Column_List"/>
+        from goods_order
+        where user_id = #{userId,jdbcType=INTEGER}
+    </select>
+</mapper>
