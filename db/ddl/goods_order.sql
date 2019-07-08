@@ -31,5 +31,5 @@ CREATE TABLE `goods_order`
     `updated_by`   varchar(32) NOT NULL COMMENT '更新人',
     `updated_date` timestamp   NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP COMMENT '更新时间',
     PRIMARY KEY (`id`)
-) ENGINE = MyISAM
+) ENGINE = InnoDB
   DEFAULT CHARSET = utf8;

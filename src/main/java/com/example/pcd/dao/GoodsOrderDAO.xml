@@ -14,28 +14,25 @@
     </resultMap>
     <sql id="Base_Column_List">
        <trim suffixOverrides=",">
-           <if test="privilege.orderId != null and privilege.orderId  == true">
-                order_id,
-           </if>
-           <if test="privilege.userId != null and privilege.userId  == true">
+           <if test="privilege.userId  == 1">
                 user_id,
            </if>
-           <if test="privilege.goodsCount != null and privilege.goodsCount  == true">
+           <if test="privilege.goodsCount  == 1">
                 goods_count,
            </if>
-           <if test="privilege.totalMoney != null and privilege.totalMoney  == true">
+           <if test="privilege.totalMoney  == 1">
                 total_money,
            </if>
-           <if test="privilege.createdBy != null and privilege.createdBy  == true">
+           <if test="privilege.createdBy  == 1">
                 created_by,
            </if>
-           <if test="privilege.createdDate != null and privilege.createdDate  == true">
+           <if test="privilege.createdDate  == 1">
                 created_date,
            </if>
-           <if test="privilege.updatedBy != null and privilege.updatedBy  == true">
+           <if test="privilege.updatedBy  == 1">
                 updated_by,
            </if>
-           <if test="privilege.updatedDate != null and privilege.updatedDate  == true">
+           <if test="privilege.updatedDate  == 1">
                 updated_date,
            </if>
        </trim>

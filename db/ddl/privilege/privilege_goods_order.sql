@@ -25,14 +25,14 @@ CREATE TABLE `privilege_goods_order`
     `system_id`        varchar(32)         NOT NULL COMMENT '系统ID',
     `scene_id`         varchar(32)         NOT NULL COMMENT '场景ID',
     `privilege_status` char(1)                      DEFAULT 'N' COMMENT '权限开启状态，默认为关闭-N，开启为Y',
-    `order_id`         tinyint(1) unsigned NOT NULL DEFAULT '0' COMMENT '订单ID',
-    `user_id`          tinyint(1) unsigned NOT NULL DEFAULT '0' COMMENT '用户ID',
-    `goods_count`      tinyint(1) unsigned NOT NULL DEFAULT '0' COMMENT '商品数量',
-    `total_money`      tinyint(1) unsigned          DEFAULT '0' COMMENT '订单金额',
-    `created_by`       tinyint(1) unsigned NOT NULL DEFAULT '0' COMMENT '创建者',
-    `created_date`     tinyint(1) unsigned NOT NULL DEFAULT '0' COMMENT '创建时间',
-    `updated_by`       tinyint(1) unsigned NOT NULL DEFAULT '0' COMMENT '更新人',
-    `updated_date`     tinyint(1) unsigned NOT NULL DEFAULT '0' COMMENT '更新时间',
+    `order_id`         tinyint(1) unsigned DEFAULT '0' COMMENT '订单ID',
+    `user_id`          tinyint(1) unsigned DEFAULT '0' COMMENT '用户ID',
+    `goods_count`      tinyint(1) unsigned DEFAULT '0' COMMENT '商品数量',
+    `total_money`      tinyint(1) unsigned DEFAULT '0' COMMENT '订单金额',
+    `created_by`       tinyint(1) unsigned DEFAULT '0' COMMENT '创建者',
+    `created_date`     tinyint(1) unsigned DEFAULT '0' COMMENT '创建时间',
+    `updated_by`       tinyint(1) unsigned DEFAULT '0' COMMENT '更新人',
+    `updated_date`     tinyint(1) unsigned DEFAULT '0' COMMENT '更新时间',
     PRIMARY KEY (`id`)
-) ENGINE = MyISAM
+) ENGINE = InnoDB
   DEFAULT CHARSET = utf8;

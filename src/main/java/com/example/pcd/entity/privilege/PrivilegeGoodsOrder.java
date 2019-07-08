@@ -22,26 +22,26 @@ public class PrivilegeGoodsOrder {
     private String privilegeStatus;
 
     /** 订单ID */
-    private Boolean orderId;
+    private short orderId;
 
     /** 用户ID */
-    private Boolean userId;
+    private short userId;
 
     /** 商品数量 */
-    private Boolean goodsCount;
+    private short goodsCount;
 
     /** 订单金额 */
-    private Boolean totalMoney;
+    private short totalMoney;
 
     /** 创建者 */
-    private Boolean createdBy;
+    private short createdBy;
 
     /** 创建时间 */
-    private Boolean createdDate;
+    private short createdDate;
 
     /** 更新人 */
-    private Boolean updatedBy;
+    private short updatedBy;
 
     /** 更新时间 */
-    private Boolean updatedDate;
+    private short updatedDate;
 }
